@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expert - IT, Network & Broadcast Engineer</title>
+  <style>
+    :root {
+      --brand: #5b42ff;
+      --dark: #0a2540;
+      --accent: #00b894;
+      --text: #222;
+      --muted: #6c757d;
+      --bg: #fff;
+      --border: #ddd;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(91,66,255,0.85), rgba(10,37,64,0.85)),
+                  url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1500&q=80");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      color: #e9ecef;
+    }
+    .hero .cta {
+      margin-top: 25px;
+    }
+    .hero .hire-btn {
+      background: var(--bg);
+      color: var(--brand);
+      padding: 12px 25px;
+      border: 2px solid var(--brand);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .hero .hire-btn:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    /* Section Base */
+    section, .container {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section h2, .section-title {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: var(--brand);
+      text-align: center;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .skill {
+      background: var(--bg);
+      border: 2px solid var(--brand);
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      color: var(--brand);
+      transition: 0.3s;
+    }
+    .skill:hover {
+      background: var(--brand);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* Achievements */
+    .achievements {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: auto;
+    }
+    .achievements li {
+      background: var(--bg);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-left: 5px solid var(--brand);
+      border-radius: 6px;
+      font-size: 1.05rem;
+      transition: 0.3s;
+    }
+    .achievements li:hover {
+      background: #f1f5ff;
+    }
+
+    /* Certifications */
+    .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .certifications img {
+      width: 120px;
+      transition: 0.3s;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+    }
+    .certifications img:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+    }
+
+    /* Grid Utilities */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* Services */
+    .service {
+      background: #f9f9ff;
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+      border-color: var(--brand);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    .service h3 {
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    /* Projects */
+    .project {
+      background: #f9f9ff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: 0.3s;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: var(--brand);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    .project img {
+      width: 100%;
+      display: block;
+    }
+    .project .body {
+      padding: 20px;
+    }
+    .project h3 {
+      margin: 0 0 10px;
+      color: var(--dark);
+    }
+    .project .sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .tag {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-right: 6px;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: #f9f9ff;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-style: italic;
+      transition: 0.3s;
+    }
+    .testimonial:hover {
+      border-color: var(--brand);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    .testimonial .quote {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    .testimonial .client {
+      font-weight: bold;
+      color: var(--brand);
+    }
+
+
+    /* Footer */
+    footer {
+      width: 100%;
+      background: var(--dark);
+      color: #fff;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .footer-nav, .footer-contact {
+      flex: 1 1 250px;
+    }
+    .footer-nav h3, .footer-contact h3 {
+      margin-bottom: 15px;
+      color: var(--brand);
+    }
+    .footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-nav li {
+      margin: 8px 0;
+    }
+    .footer-nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-nav a:hover {
+      color: var(--accent);
+    }
+    .footer-contact p {
+      margin: 6px 0;
+      color: #e9ecef;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 26px;
+      color: #adb5bd;
+      font-size: 0.92rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .footer-container { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>IT, Network & Broadcast Engineer</h1>
+    <p>Expert in broadcasting, network administration, network architecture, designing, securing, and optimizing enterprise IT infrastructure. Passionate about delivering reliable, scalable, and future-proof network solutions.</p>
+    <div class="cta">
+      <a href="https://www.linkedin.com/in/abdullah-al-fahim/" target="_blank" class="hire-btn">Hire Me →</a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Network Architecture Design</div>
+      <div class="skill">Cisco Routing & Switching</div>
+      <div class="skill">Firewall & Security</div>
+      <div class="skill">Cloud Networking (AWS/Azure)</div>
+      <div class="skill">Linux & Windows Servers</div>
+      <div class="skill">Virtualization (VMware, Hyper-V)</div>
+      <div class="skill">Linear Video Editing & Sequencing</div>
+      <div class="skill">Troubleshooting & Monitoring</div>
+      <div class="skill">Broadcast Transmission</div>
+      <div class="skill">Satellite Communication</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <div class="container" id="services">
+    <h2 class="section-title">Services</h2>
+    <div class="grid-3">
+      <div class="service"><h3>Network Architecture & Design</h3><p>Secure, scalable, multi-site topologies with high availability.</p></div>
+      <div class="service"><h3>Broadcast Systems</h3><p>End-to-end chain setup: ingest, MCR, playout, distribution.</p></div>
+      <div class="service"><h3>Cloud & Security</h3><p>AWS/Azure networking, firewalls, SASE/ZTNA, monitoring.</p></div>
+    </div>
+    <br>
+    <div class="grid-3">
+      <div class="service"><h3>Logo & Brand Guideline Design</h3><p>Logo Suite, Mood Board, Typography and Color Palettes, Brand Guide.</p></div>
+      <div class="service"><h3>Brand Planning & Strategy</h3><p>Brand Purpose & Values, Audience Personas, Positioning Strategy.</p></div>
+      <div class="service"><h3>Organic Marketing Penetration</h3><p>SEO & Content Management, Social Media & Email Marketing.</p></div>
+    </div>
+  </div>
+
+    <!-- PROJECTS -->
+  <section class="container" id="projects">
+    <h2 class="section-title">Selected Projects</h2>
+    <div class="grid-3">
+      <article class="project">
+        <img src="YOUR_PROJECT_IMG_1" alt="Enterprise WAN Project">
+        <div class="body">
+          <h3>Enterprise WAN (10 Sites)</h3>
+          <p class="sub">Redundant edge, dynamic routing, centralized observability.</p>
+          <div>
+            <span class="tag">Cisco</span>
+            <span class="tag">BGP</span>
+            <span class="tag">HA</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="YOUR_PROJECT_IMG_2" alt="Broadcast Playout Chain">
+        <div class="body">
+          <h3>Broadcast Playout Chain</h3>
+          <p class="sub">Low-latency ingest to resilient playout & distribution.</p>
+          <div>
+            <span class="tag">SDI/IP</span>
+            <span class="tag">SRT</span>
+            <span class="tag">Monitoring</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="YOUR_PROJECT_IMG_3" alt="Cloud Network Hardening">
+        <div class="body">
+          <h3>Cloud Network Hardening</h3>
+          <p class="sub">Segmentation, WAF, ZTNA, IaC-driven guardrails.</p>
+          <div>
+            <span class="tag">AWS</span>
+            <span class="tag">ZTNA</span>
+            <span class="tag">IaC</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <h2 class="section-title">Key Achievements</h2>
+    <ul class="achievements">
+      <li>Designed and deployed a secure corporate WAN across 10 branch offices.</li>
+      <li>Reduced network downtime by 40% with proactive monitoring solutions.</li>
+      <li>Led cloud migration of legacy systems to AWS with zero data loss.</li>
+      <li>Implemented advanced firewall policies to strengthen cybersecurity posture.</li>
+    </ul>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certifications">
+      <img src="https://img.icons8.com/color/96/cisco-anyconnect.png" alt="Cisco Certified">
+      <img src="https://img.icons8.com/color/96/amazon-web-services.png" alt="AWS Certified">
+      <img src="https://img.icons8.com/color/96/microsoft.png" alt="Microsoft Certified">
+      <img src="https://img.icons8.com/color/96/linux.png" alt="Linux Certified">
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="container" id="testimonials">
+    <h2 class="section-title">What Clients Say</h2>
+    <div class="grid-3">
+      <div class="testimonial">
+        <div class="quote">“Fahim delivered a rock-solid network that finally ended our outages.”</div>
+        <div class="client">— CTO, Media Group</div>
+      </div>
+      <div class="testimonial">
+        <div class="quote">“Our broadcast pipeline is smoother than ever. On-air confidence is way up.”</div>
+        <div class="client">— Head of Broadcast Ops</div>
+      </div>
+      <div class="testimonial">
+        <div class="quote">“Clear, methodical, and fast. Security posture improved across the board.”</div>
+        <div class="client">— VP, Technology</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-nav">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://sites.google.com/view/itsalfahim/home">Home</a></li>
+          <li><a href="https://sites.google.com/view/itsalfahim/my-story">My Story</a></li>
+          <li><a href="https://sites.google.com/view/itsalfahim/portfolio">Portfolio</a></li>
+          <li><a href="https://sites.google.com/view/itsalfahim/blog">Blog</a></li>
+          <li><a href="https://sites.google.com/view/itsalfahim/testimonials">Testimonials</a></li>
+          <li><a href="https://sites.google.com/view/itsalfahim/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav">
+        <h3>Important Links</h3>
+        <ul>
+          <li><a href="https://sites.google.com/view/itsalfahim/home">Download Resume</a></li>
+          <li><a href="https://sites.google.com/view/itsalfahim/home">Get 1:1 Free Consultation</a></li>
+          <li><a href="https://cal.com/meet-fahim">Book an Appointment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Info</h3>
+        <p>Email: <a href="mailto:alfahim604@yahoo.com">alfahim604@yahoo.com</a></p>
+        <p>Phone: +880-1871295320</p>
+        <p>Location: Dhaka, Bangladesh</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Abdullah Al Fahim | All Rights Reserved</div>
+  </footer>
+
+</body>
+</html>
