@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Resume - Abdullah Al Fahim</title>
+  <style>
+    :root {
+      --brand:#5b42ff;
+      --brand-dark:#231650;
+      --light:#f5f6ff;
+      --dark:#1a1a2e;
+      --text:#222;
+      --muted:#666;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:"Segoe UI",sans-serif;background:#fff;color:var(--text);line-height:1.6;scroll-behavior:smooth}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{max-width:1000px;margin:0 auto;padding:60px 20px;opacity:0;transform:translateY(20px);transition:all 1s ease}
+    .show{opacity:1!important;transform:translateY(0)!important}
+    h2.section-title{text-align:center;font-size:1.8rem;margin-bottom:24px;color:var(--brand)}
+    .btn{display:inline-block;padding:10px 18px;background:var(--brand);color:#fff;font-weight:600;border-radius:8px;transition:.3s}
+    .btn:hover{background:#4a35d8}
+    
+    /* Header */
+    header{background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;padding:40px 20px}
+    .header-wrap{display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:center;max-width:1000px;margin:0 auto}
+    .header-info h1{font-size:2.2rem;margin-bottom:8px}
+    .header-info p{margin:4px 0;color:#e0e0f8}
+    .header-info .btn{margin-top:15px;background:#fff;color:var(--brand)}
+    .header-info .btn:hover{background:#f5f6ff}
+    .header-photo img{border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+    
+    /* Sections */
+    section{margin-bottom:50px}
+    .card{background:var(--light);padding:20px;border-radius:10px;margin-bottom:15px;border-left:4px solid var(--brand)}
+    .card h3{margin-bottom:6px;color:var(--brand)}
+    ul{padding-left:20px}
+    
+    /* Skills chips */
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{background:var(--brand);color:#fff;padding:8px 14px;border-radius:20px;font-size:.9rem}
+    
+    /* Footer */
+    footer{background:var(--dark);color:#ccc;text-align:center;padding:20px;font-size:.9rem}
+    
+    /* Back to top */
+    #backToTop{position:fixed;bottom:40px;right:40px;background:var(--brand);color:#fff;border:none;border-radius:50%;width:48px;height:48px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 10px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:.3s;z-index:9999}
+    #backToTop.show{opacity:1;pointer-events:auto}
+    #backToTop:hover{background:#4a35d8}
+    
+    /* Responsive */
+    @media(max-width:768px){
+      .header-wrap{grid-template-columns:1fr;text-align:center}
+      .header-photo img{max-width:200px;margin:0 auto}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-wrap">
+      <div class="header-info">
+        <h1>Abdullah Al Fahim</h1>
+        <p>Email: demo@email.com</p>
+        <p>Phone: +880 123 456 789</p>
+        <p>Location: Dhaka, Bangladesh</p>
+        <a href="cv.pdf" class="btn" download>Download CV</a>
+      </div>
+      <div class="header-photo">
+        <img src="https://via.placeholder.com/250x300" alt="Profile Photo">
+      </div>
+    </div>
+  </header>
+
+  <!-- Professional Summary -->
+  <section class="container">
+    <h2 class="section-title">Professional Summary</h2>
+    <p>Dedicated and results-driven professional with expertise in web development, problem-solving, and creative solutions. Passionate about building responsive, user-friendly applications and delivering high-quality projects under tight deadlines.</p>
+  </section>
+
+  <!-- Experience -->
+  <section class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="card">
+      <h3>Frontend Developer - XYZ Company</h3>
+      <p class="muted">Jan 2021 - Present</p>
+      <ul>
+        <li>Developed modern, responsive web applications.</li>
+        <li>Collaborated with designers and backend developers.</li>
+        <li>Improved performance and accessibility of websites.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Intern Developer - ABC Solutions</h3>
+      <p class="muted">Jun 2020 - Dec 2020</p>
+      <ul>
+        <li>Assisted in building interactive dashboards.</li>
+        <li>Tested and debugged code under supervision.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="container">
+    <h2 class="section-title">Education</h2>
+    <div class="card">
+      <h3>B.Sc. in Computer Science</h3>
+      <p>University of Example | 2016 - 2020</p>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="chips">
+      <span class="chip">HTML</span>
+      <span class="chip">CSS</span>
+      <span class="chip">JavaScript</span>
+      <span class="chip">React</span>
+      <span class="chip">Node.js</span>
+      <span class="chip">Git/GitHub</span>
+    </div>
+  </section>
+
+  <!-- Organizational Skills -->
+  <section class="container">
+    <h2 class="section-title">Organizational Skills</h2>
+    <ul>
+      <li>Team Leadership</li>
+      <li>Project Management</li>
+      <li>Event Coordination</li>
+    </ul>
+  </section>
+
+  <!-- Extra Curricular Activities -->
+  <section class="container">
+    <h2 class="section-title">Extra Curricular Activities</h2>
+    <ul>
+      <li>Volunteering at Tech Events</li>
+      <li>Community Coding Workshops</li>
+    </ul>
+  </section>
+
+  <!-- Co-Curricular Activities -->
+  <section class="container">
+    <h2 class="section-title">Co-Curricular Activities</h2>
+    <ul>
+      <li>Member, Computer Science Club</li>
+      <li>Hackathon Participation</li>
+    </ul>
+  </section>
+
+  <!-- Achievements -->
+  <section class="container">
+    <h2 class="section-title">Achievements</h2>
+    <ul>
+      <li>Winner - National Coding Competition 2021</li>
+      <li>Dean’s List - 2019 & 2020</li>
+    </ul>
+  </section>
+
+  <!-- Professional Courses & Training -->
+  <section class="container">
+    <h2 class="section-title">Professional Courses & Training</h2>
+    <ul>
+      <li>Full-Stack Web Development - Coursera</li>
+      <li>Agile Project Management - Udemy</li>
+    </ul>
+  </section>
+
+  <!-- Awards & Certifications -->
+  <section class="container">
+    <h2 class="section-title">Awards & Certifications</h2>
+    <ul>
+      <li>Certified Frontend Developer - W3Schools</li>
+      <li>Google UX Design Certificate</li>
+    </ul>
+  </section>
+
+  <!-- Languages -->
+  <section class="container">
+    <h2 class="section-title">Languages</h2>
+    <ul>
+      <li>English - Fluent</li>
+      <li>Bengali - Native</li>
+      <li>Hindi - Conversational</li>
+    </ul>
+  </section>
+
+  <!-- References -->
+  <section class="container">
+    <h2 class="section-title">References</h2>
+    <p>Available upon request</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Abdullah Al Fahim. All Rights Reserved.
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to Top">↑</button>
+
+  <script>
+    // Intersection animations
+    const elements=document.querySelectorAll('.container');
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target);}
+      });
+    },{threshold:0.1});
+    elements.forEach(el=>observer.observe(el));
+
+    // Back to top
+    const backToTopBtn=document.getElementById('backToTop');
+    window.addEventListener('scroll',()=>backToTopBtn.classList.toggle('show',window.scrollY>300));
+    backToTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  </script>
+</body>
+</html>
