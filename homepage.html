@@ -1,163 +1,187 @@
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Abdullah Al Fahim — Home</title>
-<style>
-  
-  :root {
-  /* 🎨 Brand Scale */
-  --brand-50:  #eceeff;
-  --brand-100: #dde0ff;
-  --brand-200: #c2c6ff;
-  --brand-300: #9c9fff;
-  --brand-400: #7d75ff;
-  --brand-500: #5b42ff;  /* Primary */
-  --brand-600: #5e36f5;
-  --brand-700: #522ad8;  /* Muted text */
-  --brand-800: #4225ae;
-  --brand-900: #382689;
-  --brand-950: #231650;  /* Dark navy */
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdullah Al Fahim — Home</title>
+  <style>
+    :root {
+      /* 🎨 Brand Scale */
+      --brand-50:  #eceeff;
+      --brand-100: #dde0ff;
+      --brand-200: #c2c6ff;
+      --brand-300: #9c9fff;
+      --brand-400: #7d75ff;
+      --brand-500: #5b42ff;  /* Primary */
+      --brand-600: #5e36f5;
+      --brand-700: #522ad8;  /* Muted text */
+      --brand-800: #4225ae;
+      --brand-900: #382689;
+      --brand-950: #231650;  /* Dark navy */
 
-  /* 🌐 Core Palette */
-  --brand:   var(--brand-500);  /* Primary */
-  --dark:    var(--brand-950);  /* Dark navy */
-  --accent:  var(--brand-400);  /* Accent color */
-  --text:    #222222;           /* Body text */
-  --muted:   var(--brand-700);  /* Muted text */
-  --bg:      #ffffff;           /* Background (White) */
-  --card:    var(--brand-50);   /* Light card */
-  --border:  var(--brand-200);  /* Border */
+      /* 🌐 Core Palette */
+      --brand:   var(--brand-500);
+      --dark:    var(--brand-950);
+      --accent:  var(--brand-400);
+      --text:    #222222;
+      --muted:   var(--brand-700);
+      --bg:      #ffffff;
+      --card:    var(--brand-50);
+      --border:  var(--brand-200);
 
-  /* ⚫⚪ Utilities */
-  --white: #ffffff;
-  --black: #000000;
-}
+      /* ⚫⚪ Utilities */
+      --white: #ffffff;
+      --black: #000000;
+    }
 
-  
-  
-  
-  /* :root{
-    --brand:#5b42ff;      /* Primary */
-    --dark:#231650;       /* Dark navy */
-    --accent:#5b42ff;     /* Teal accent */
-    --text:#222222;       /* Body text */
-    --muted:#522ad8;      /* Muted text */
-    --bg:#ffffff;         /* Background */
-    --card:#f8f9fb;       /* Light card */
-    --border:#e6e8ee;     /* Border */
-  } */
+    /* Base */
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", Tahoma, sans-serif; scroll-behavior: smooth; }
+    a { color: inherit; text-decoration: none }
+    img { max-width: 100%; display: block }
 
-  /* Base */
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,sans-serif}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+    .container.show { opacity: 1; transform: translateY(0); }
+    .section-title { font-size: 2rem; margin: 0 0 24px; text-align: center; color: var(--brand) }
+    .sub { color: var(--border); font-size: 0.95rem }
 
-  /* Layout helpers */
-  .container{max-width:1100px;margin:0 auto;padding:60px 20px}
-  .section-title{font-size:2rem;margin:0 0 24px;text-align:center;color:var(--brand)}
-  .sub{color:var(--border);font-size:0.95rem}
+    /* HERO */
+    .hero-wrap { width: 100%; background: linear-gradient(135deg, var(--brand), var(--dark)); color: #fff }
+    .hero { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 28px; align-items: center; opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+    .hero.show { opacity: 1; transform: translateY(0); }
+    .hero .photo {
+      border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 18px 40px rgba(0,0,0,.25); background: #0f172a;
+      aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center
+    }
+    .hero h1 { font-size: clamp(28px, 4.5vw, 44px); margin: 0 0 10px }
+    .hero .lead { font-size: 1.08rem; line-height: 1.6; color: #e9edf5; margin: 0 0 20px; max-width: 680px }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 18px 0 14px }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 12px; font-weight: 600; border: 1px solid rgba(255,255,255,.25); transition: background 0.3s }
+    .btn:hover { background: rgba(255,255,255,.2); }
+    .btn-primary { background: #fff; color: #0a2240; border-color: #fff }
+    .btn-outline { background: transparent; color: #fff }
+    .social { display: flex; gap: 12px; align-items: center }
+    .icon-btn {
+      width: 38px; height: 38px; border-radius: 11px; border: 1px solid rgba(255,255,255,.25);
+      display: flex; align-items: center; justify-content: center; transition: .2s
+    }
+    .icon-btn:hover { background: rgba(255,255,255,.12); transform: translateY(-1px) }
 
-  /* HERO full-width */
-  .hero-wrap{width:100%;background:linear-gradient(135deg,var(--brand),var(--dark));color:#fff}
-  .hero{display:grid;grid-template-columns:0.95fr 1.05fr;gap:28px;align-items:center}
-  .hero .photo{
-    border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.18);
-    box-shadow:0 18px 40px rgba(0,0,0,.25);background:#0f172a;
-    aspect-ratio:4/5;display:flex;align-items:center;justify-content:center
-  }
-  .hero h1{font-size:clamp(28px,4.5vw,44px);margin:0 0 10px}
-  .hero .lead{font-size:1.08rem;line-height:1.6;color:#e9edf5;margin:0 0 20px;max-width:680px}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:18px 0 14px}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;font-weight:600;border:1px solid rgba(255,255,255,.25)}
-  .btn-primary{background:#fff;color:#0a2240;border-color:#fff}
-  .btn-outline{background:transparent;color:#fff}
-  .social{display:flex;gap:12px;align-items:center}
-  .icon-btn{
-    width:38px;height:38px;border-radius:11px;border:1px solid rgba(255,255,255,.25);
-    display:flex;align-items:center;justify-content:center;transition:.2s
-  }
-  .icon-btn:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+    /* Cards */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px; opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+    .card.show { opacity: 1; transform: translateY(0); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px }
 
-  /* Cards */
-  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
-  .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-  .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    /* Story */
+    .story { text-align: center }
+    .story p { margin: 0 0 12px; color: var(--text); line-height: 1.7 }
+    .readmore { display: inline-block; margin-top: 6px; color: #fff; background: var(--brand); padding: 10px 16px; border-radius: 12px; font-weight: 600; text-align: center; transition: background 0.3s }
+    .readmore:hover { background: var(--brand-600); }
 
-  /* Story teaser */
-  .story {text-align: center; /* aligns inline-block elements like your button */}
-  .story p{margin:0 0 12px;color:var(--text);line-height:1.7}
-  .readmore{display:inline-block;margin-top:6px;color:#fff;background:var(--brand);padding:10px 16px;border-radius:12px;font-weight:600}
+    /* Chips */
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center }
+    .chip { border: 2px solid var(--brand); color: var(--brand); background: #fff; padding: 10px 14px; border-radius: 999px; font-weight: 600; cursor: pointer; transition: background 0.3s, color 0.3s }
+    .chip:hover { background: var(--brand); color: #fff }
 
-  /* Expertise summary (chips) */
-  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-  .chip{border:2px solid var(--brand);color:var(--brand);background:#fff;padding:10px 14px;border-radius:999px;font-weight:600}
-  .chip:hover{background:var(--brand);color:#fff}
+    /* Timeline */
+    .timeline { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px }
+    .tl-col { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+    .tl-col.show { opacity: 1; transform: translateY(0); }
+    .tl-title { margin: 0 0 6px; font-size: 1.15rem; color: var(--brand); text-align: center }
+    .tl { position: relative; margin: 10px 0 0; padding-left: 24px; }
+    .tl:before { content: ""; position: absolute; left: 9px; top: 2px; bottom: 2px; width: 2px; background: linear-gradient(var(--brand), var(--accent)) }
+    .tli { position: relative; margin: 0 0 16px }
+    .tli:before { content: ""; position: absolute; left: -16px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 4px #ffffff }
+    .tli .when { font-weight: 700; color: #0a2540 }
+    .tli .what { margin: 2px 0 0 }
+    .tli .where { color: var(--muted); font-size: 0.95rem }
 
-  /* Timeline (Education & Experience) */
-  .timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-  .tl-col{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
-  .tl-title{margin:0 0 6px;font-size:1.15rem;color:var(--brand);text-align:center}
-  .tl{position:relative;margin:10px 0 0;padding:0 0 0 24px}
-  .tl:before{content:"";position:absolute;left:9px;top:2px;bottom:2px;width:2px;background:linear-gradient(var(--brand),var(--accent))}
-  .tli{position:relative;margin:0 0 16px}
-  .tli:before{content:"";position:absolute;left:-16px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px #ffffff}
-  .tli .when{font-weight:700;color:#0a2540}
-  .tli .what{margin:2px 0 0}
-  .tli .where{color:var(--muted);font-size:0.95rem}
+    /* Blog */
+    .blog-card { display: flex; flex-direction: column; gap: 10px; background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+    .blog-card.show { opacity: 1; transform: translateY(0); }
+    .blog-card .thumb { aspect-ratio: 16/9; background: #eef2ff; }
+    .blog-card .body { padding: 16px }
+    .blog-card h3 { margin: 0 0 6px; font-size: 1.08rem }
+    .blog-card p { margin: 0; color: var(--muted) }
+    .blog-card a.more { display: inline-block; margin-top: 10px; color: #fff; background: var(--brand); padding: 8px 12px; border-radius: 10px; font-weight: 600; transition: background 0.3s }
+    .blog-card a.more:hover { background: var(--brand-600); }
 
-  /* Featured blog cards */
-  .blog-card{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
-  .blog-card .thumb{aspect-ratio:16/9;background:#eef2ff}
-  .blog-card .body{padding:16px}
-  .blog-card h3{margin:0 0 6px;font-size:1.08rem}
-  .blog-card p{margin:0;color:var(--muted)}
-  .blog-card a.more{display:inline-block;margin-top:10px;color:#fff;background:var(--brand);padding:8px 12px;border-radius:10px;font-weight:600}
+    /* Services */
+    .service { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 20px }
+    .service h3 { margin: 0 0 6px; color: var(--dark) }
+    .service p { margin: 0; color: var(--muted) }
 
-  /* Services */
-  .service{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px}
-  .service h3{margin:0 0 6px;color:var(--dark)}
-  .service p{margin:0;color:var(--muted)}
+    /* Projects */
+    .project { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden }
+    .project .thumb { aspect-ratio: 16/9; background: #eef2ff }
+    .project .body { padding: 16px; color: var(--dark) }
+    .tag { display: inline-block; font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--dark); margin-right: 6px }
 
-  /* Projects */
-  .project{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
-  .project .thumb{aspect-ratio:16/9;background:#eef2ff}
-  .project .body{padding:16px;color:var(--dark)}
-  .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--dark);margin-right:6px}
+    /* Testimonials */
+    .testimonial { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 20px; opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+    .testimonial.show { opacity: 1; transform: translateY(0); }
+    .quote { font-style: italic }
+    .client { margin-top: 10px; color: var(--dark); font-weight: 700 }
 
-  /* Testimonials */
-  .testimonial{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px}
-  .quote{font-style:italic}
-  .client{margin-top:10px;color:var(--dark);font-weight:700}
+    /* Footer */
+    footer { width: 100%; background: var(--dark); color: #fff; padding: 40px 20px; margin-top: 60px }
+    .footer-container { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px }
+    .footer-nav, .footer-contact { flex: 1 1 250px }
+    .footer-nav h3, .footer-contact h3 { margin-bottom: 15px; color: var(--brand) }
+    .footer-nav ul { list-style: none; margin: 0; padding: 0 }
+    .footer-nav li { margin: 8px 0 }
+    .footer-nav a { color: #fff }
+    .footer-nav a:hover { color: var(--accent) }
+    .footer-contact p { margin: 6px 0; color: #e9ecef }
+    .footer-bottom { text-align: center; margin-top: 26px; color: #adb5bd; font-size: .92rem }
 
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 9999;
+    }
+    #backToTop.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    #backToTop:hover {
+      background: var(--brand-600);
+      transform: translateY(-2px);
+    }
 
-
-
-  /* Footer */
-  footer{width:100%;background:var(--dark);color:#fff;padding:40px 20px;margin-top:60px}
-  .footer-container{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px}
-  .footer-nav,.footer-contact{flex:1 1 250px}
-  .footer-nav h3,.footer-contact h3{margin-bottom:15px;color:var(--brand)}
-  .footer-nav ul{list-style:none;margin:0;padding:0}
-  .footer-nav li{margin:8px 0}
-  .footer-nav a{color:#fff}
-  .footer-nav a:hover{color:var(--accent)}
-  .footer-contact p{margin:6px 0;color:#e9ecef}
-  .footer-bottom{text-align:center;margin-top:26px;color:#adb5bd;font-size:.92rem}
-
-  /* Responsive */
-  @media (max-width:980px){.hero{grid-template-columns:1fr;gap:18px}.hero .photo{max-width:420px;margin:0 auto}}
-  @media (max-width:860px){.grid-3{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr}}
-  @media (max-width:560px){.grid-3,.grid-2{grid-template-columns:1fr}}
-  @media (max-width:860px) {
-  .contact .grid-2 {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  
-  
-</style>
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; gap: 18px }
+      .hero .photo { max-width: 420px; margin: 0 auto }
+    }
+    @media (max-width: 860px) {
+      .grid-3 { grid-template-columns: 1fr 1fr }
+      .timeline { grid-template-columns: 1fr }
+      .contact .grid-2 { grid-template-columns: 1fr; gap: 24px }
+    }
+    @media (max-width: 560px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr }
+    }
+  </style>
 </head>
 <body>
 
@@ -195,7 +219,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M18.896 0H5.104C2.281 0 0 2.281 0 5.104v13.792C0 21.719 2.281 24 5.104 24h7.417v-9.294H9.691v-3.622h2.83V8.413c0-2.807 1.713-4.338 4.213-4.338 1.197 0 2.229.089 2.53.129v2.936h-1.738c-1.363 0-1.627.648-1.627 1.598v2.096h3.255l-.424 3.622h-2.831V24h5.556C21.719 24 24 21.719 24 18.896V5.104C24 2.281 21.719 0 18.896 0z"/></svg>
             </a>
             <a class="icon-btn" href="https://www.youtube.com/@abdullah-al-faahim" target="_blank" rel="noopener" aria-label="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.3 3.5 12 3.5 12 3.5s-7.3 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2.1.6 9.4.6 9.4.6s7.3 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.2 3.5-6.2 3.5z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 12 24" fill="#fff"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.3 3.5 12 3.5 12 3.5s-7.3 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2.1.6 9.4.6 9.4.6s7.3 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.2 3.5-6.2 3.5z"/></svg>
             </a>
           </div>
         </div>
@@ -211,13 +235,13 @@
     <div class="card story">
       <p>
         Born in Mirpur, Dhaka in 1998, Abdullah Al Fahim grew up as an active and straightforward child, 
-		moving through eight different schools across Bangladesh during his early education. Despite constant 
-		changes, he excelled academically. His professional journey began with leadership roles at Farhanasbrainstation 
-		and the National University Skill Development Forum, where he rose to become Executive Director of Business 
-		Development and Head of Branding and Communication, respectively. After graduation in 2023, Fahim transitioned 
-		into his career, joining Channel i as a Broadcast Engineer (Transmission) in 2024.
+        moving through eight different schools across Bangladesh during his early education. Despite constant 
+        changes, he excelled academically. His professional journey began with leadership roles at Farhanasbrainstation 
+        and the National University Skill Development Forum, where he rose to become Executive Director of Business 
+        Development and Head of Branding and Communication, respectively. After graduation in 2023, Fahim transitioned 
+        into his career, joining Channel i as a Broadcast Engineer (Transmission) in 2024.
       </p>
-      <a class="readmore" href="https://sites.google.com/view/itsalfahim/my-story">Read the full story →</a>
+      <a class="readmore" href="https://www.abdullahfahim.xyz/my-story">Read the full story →</a>
     </div>
   </div>
 
@@ -238,7 +262,7 @@
       <span class="chip">Monitoring & Troubleshooting</span>
     </div>
     <div style="text-align:center;margin-top:16px">
-      <a class="readmore" href="https://sites.google.com/view/itsalfahim/portfolio">View Portfolio →</a>
+      <a class="readmore" href="https://www.abdullahfahim.xyz/portfolio">View Portfolio →</a>
     </div>
   </div>
 
@@ -259,12 +283,12 @@
             <div class="what">HSC in Science</div>
             <div class="where">Haji Lalmia City College, Gopalganj</div>
           </div>
-		   <div class="tli">
-				<div class="when">2015 – 2017</div>
-				<div class="what">SSC in Science</div>
-				<div class="where">Naebunnessa Institution, Ratoil</div>
-			  </div>
-		</div>
+           <div class="tli">
+                <div class="when">2015 – 2017</div>
+                <div class="what">SSC in Science</div>
+                <div class="where">Naebunnessa Institution, Ratoil</div>
+              </div>
+        </div>
       </div>
       <div class="tl-col">
         <h3 class="tl-title">Experience</h3>
@@ -292,15 +316,15 @@
   <!-- FEATURED BLOG (LinkedIn Newsletter) -->
   <div class="container">
     <h2 class="section-title">The Almanac of Fahim</h2>
-	<p class="sub" style="text-align:center;max-width:800px;margin:0 auto 16px;color:#000">
+    <p class="sub" style="text-align:center;max-width:800px;margin:0 auto 16px;color:#000">
       A Lifestyle and personal development newsletter on linkedin publish new edition in every month.
     </p>
     <div class="grid-3">
       <!-- Card 1 -->
-      <article class="blog-card"->
+      <article class="blog-card">
         <div class="thumb">
           <!-- Replace image -->
-          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/blog cover -- believe it to achieve it by brain tracy.png" alt="Blog cover 1">
+          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/blog%20cover%20--%20believe%20it%20to%20achieve%20it%20by%20brain%20tracy.png" alt="Blog cover 1">
         </div>
         <div class="body">
           <h3>15 Lessons of "Believe it to Achieve it"</h3>
@@ -350,8 +374,8 @@
         <p>AWS/Azure networking, firewalls, SASE/ZTNA, monitoring.</p>
       </div>
     </div>
-	<br>
-	<div class="grid-3">
+    <br>
+    <div class="grid-3">
       <div class="service">
         <h3>Logo & Brand Guideline Design</h3>
         <p>Logo Suite, Mood Board, Typography and Color Palettes, Brand Guide.</p>
@@ -417,9 +441,7 @@
     </div>
   </div>
   
-  
-  
-<!-- CONTACT SECTION -->
+  <!-- CONTACT SECTION -->
 <div class="container">
   <h2 class="section-title">Contact Me</h2>
   <div class="grid-2" style="gap:40px;align-items:start;">
@@ -473,27 +495,25 @@
   </div>
 </div>
 
-  
 
-  <!-- FOOTER -->
+<!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <div class="footer-nav">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="https://sites.google.com/view/itsalfahim/home">Home</a></li>
-          <li><a href="https://sites.google.com/view/itsalfahim/my-story">My Story</a></li>
-          <li><a href="https://sites.google.com/view/itsalfahim/portfolio">Portfolio</a></li>
-          <li><a href="https://sites.google.com/view/itsalfahim/blog">Blog</a></li>
-          <li><a href="https://sites.google.com/view/itsalfahim/testimonials">Testimonials</a></li>
-          <li><a href="https://sites.google.com/view/itsalfahim/contact">Contact</a></li>
+          <li><a href="https://www.abdullahfahim.xyz/home">Home</a></li>
+          <li><a href="https://www.abdullahfahim.xyz/my-story">My Story</a></li>
+          <li><a href="https://www.abdullahfahim.xyz/portfolio">Portfolio</a></li>
+          <li><a href="https://www.abdullahfahim.xyz/testimonials">Testimonials</a></li>
+          <li><a href="https://www.abdullahfahim.xyz/contact">Contact</a></li>
         </ul>
       </div>
 	        <div class="footer-nav">
         <h3>Important Links</h3>
         <ul>
-          <li><a href="https://sites.google.com/view/itsalfahim/home">Download Resume</a></li>
-		  <li><a href="https://sites.google.com/view/itsalfahim/home">Get 1:1 Free Consultation</a></li>
+          <li><a href="https://www.abdullahfahim.xyz/home">Download Resume</a></li>
+		  <li><a href="https://www.abdullahfahim.xyz/home">Get 1:1 Free Consultation</a></li>
 		  <li><a href="https://cal.com/meet-fahim">Book an Appointment</a></li>
       </div>
       <div class="footer-contact">
@@ -506,5 +526,52 @@
     <div class="footer-bottom">© 2025 Abdullah Al Fahim | All Rights Reserved</div>
   </footer>
 
+
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to Top" title="Back to Top">
+    ↑
+  </button>
+
+  <script>
+    // Animate containers on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.container, .hero, .card, .tl-col, .blog-card, .testimonial').forEach(el => {
+        el.classList.add('show');
+      });
+    });
+
+    // Animate elements when they come into view
+    const observerOptions = {
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.container, .hero, .card, .tl-col, .blog-card, .testimonial').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Back to Top Button logic
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
