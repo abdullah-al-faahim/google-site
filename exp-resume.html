@@ -20,8 +20,8 @@
     .container{max-width:1000px;margin:0 auto;padding:60px 20px;opacity:0;transform:translateY(20px);transition:all 1s ease}
     .show{opacity:1!important;transform:translateY(0)!important}
     h2.section-title{text-align:center;font-size:1.8rem;margin-bottom:24px;color:var(--brand)}
-    .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#fff;color:var(--brand);font-weight:600;border:none;border-radius:8px;transition:.3s;box-shadow:0 4px 10px rgba(0,0,0,.1)}
-    .btn:hover{background:var(--light);color:var(--brand-dark)}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:var(--brand);color:#fff;font-weight:600;border-radius:8px;transition:.3s}
+    .btn:hover{background:#4a35d8}
     
     /* Header */
     header{background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;padding:40px 20px}
@@ -51,7 +51,7 @@
 
     /* Print Resume Styling */
     @media print {
-      body { background:#fff; font-family:"Garamond", serif; color:#000; line-height:1.0; }
+      body { background:#fff; font-family:"Times New Roman", serif; color:#000; line-height:1.0; }
       header { background:none; color:#000; padding:0; margin-bottom:20px; }
       .header-wrap { 
         display:grid; 
@@ -80,7 +80,7 @@
   </style>
 </head>
 <body>
-  <div id="resume-content"> 
+
   <!-- Header -->
   <header>
     <div class="header-wrap">
@@ -92,23 +92,13 @@
         <div class="cta-row">
           <!-- LinkedIn button -->
           <a class="btn" href="https://www.linkedin.com/in/abdullah-al-fahim/" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
               <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.33 6 7.66V24h-5V16.4c0-1.81-.03-4.15-2.53-4.15-2.53 0-2.92 1.98-2.92 4.02V24H8z"/>
             </svg>
-            
+            LinkedIn
           </a>
           <!-- Save as PDF button -->
-          <button class="btn" onclick="
-            const element = document.getElementById('resume-content');
-            var opt = {
-              margin:       [0.5, 0.5, 0.5, 0.5],
-              filename:     'Abdullah Al Fahim - Digital Resume.pdf',
-              image:        { type: 'jpeg', quality: 0.98 },
-              html2canvas:  { scale: 2, media: 'print' },
-              jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-            };
-            html2pdf().set(opt).from(element).save();
-          ">Save as PDF</button>
+          <button class="btn" onclick="window.print()">Save as PDF</button>
         </div>
       </div>
       <div class="header-photo">
@@ -134,7 +124,6 @@
     <div class="card">
       <h3>Broadcast Engineer (Transmission) - Channel i, Impress Telefilm Ltd.</h3>
       <p class="muted">Sep 2024 - Present</p>
-      <strong>Responsibilities:</strong>
       <ul>
         <li>Ensure seamless 24/7 broadcast continuity through proactive MCR (Master Control Room) management.</li>
         <li>Reduced system downtime by 30% via preventive maintenance, achieving 99.99% uptime.</li>
@@ -144,7 +133,6 @@
     <div class="card">
       <h3>Branding & IT Executive - Laptop World BD</h3>
       <p class="muted">May 2023 - Aug 2024</p>
-      <strong>Responsibilities:</strong>
       <ul>
         <li>Designed 300 materials for branding and marketing, extended to manage customer databases.</li>
         <li>Introduced an interactive customer experience service for laptop testing before purchase.</li>
@@ -234,7 +222,7 @@
     <div class="card">
       <h3>Head of Branding & Communication, NUSDF Bangladesh</h3>
       <p>May 2024 - March 2025</p>
-      <strong>Responsibilities:</strong>
+      <h4 class="section-title">Responsibilities:</h4>
       <ul>
         <li>Lead a creative team over the top to generate daily content and promotional materials</li>
       </ul>
@@ -242,7 +230,7 @@
     <div class="card">
       <h3>Executive Director (Business Development), FarhanasBrainstation</h3>
       <p>January 2021 - December 2023</p>
-      <strong>Responsibilities:</strong>
+      <h4 class="section-title">Responsibilities:</h4>
       <ul>
         <li>Lead a creative team over the top to generate daily content and promotional materials</li>
       </ul>
@@ -250,7 +238,7 @@
     <div class="card">
       <h3>Campus Ambassador, Youth Opportunities</h3>
       <p>March 2021 - December 2021</p>
-      <strong>Responsibilities:</strong>
+      <h4 class="section-title">Responsibilities:</h4>
       <ul>
         <li>Lead a creative team over the top to generate daily content and promotional materials</li>
       </ul>
@@ -258,7 +246,7 @@
     <div class="card">
       <h3>Campus Ambassador, Bangladesh Youth Leadership Center (BYLC)</h3>
       <p>February 2019 - December 2019</p>
-      <strong>Responsibilities:</strong>
+      <h4 class="section-title">Responsibilities:</h4>
       <ul>
         <li>Lead a creative team over the top to generate daily content and promotional materials</li>
       </ul>
@@ -271,7 +259,7 @@
     <div class="card">
       <h3>General Secretary (PR & Communication), IEEE ISTT Student Branch</h3>
       <p>October 2019 - March 2021</p>
-      <strong>Responsibilities:</strong>
+      <h4 class="section-title">Responsibilities:</h4>
       <ul>
         <li>Lead a creative team over the top to generate daily content and promotional materials</li>
       </ul>
@@ -279,7 +267,7 @@
     <div class="card">
       <h3>Head of Creative Design, ISTT Innovation Hub</h3>
       <p>May 2024 - March 2025</p>
-      <strong>Responsibilities:</strong>
+      <h4 class="section-title">Responsibilities:</h4>
       <ul>
         <li>Lead a creative team over the top to generate daily content and promotional materials</li>
       </ul>
@@ -287,7 +275,7 @@
     <div class="card">
       <h3>Treasurer, Suvonil Literature and Cultural Club - ISTT</h3>
       <p>May 2024 - March 2025</p>
-      <strong>Responsibilities:</strong>
+      <h4 class="section-title">Responsibilities:</h4>
       <ul>
         <li>Lead a creative team over the top to generate daily content and promotional materials</li>
       </ul>
@@ -336,7 +324,6 @@
     <h2 class="section-title">References</h2>
     <p>Available upon request</p>
   </section>
-  </div>
 
   <!-- Footer -->
   <footer>
@@ -361,6 +348,5 @@
     window.addEventListener('scroll',()=>backToTopBtn.classList.toggle('show',window.scrollY>300));
     backToTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
 </html>
