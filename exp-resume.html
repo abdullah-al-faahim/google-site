@@ -41,6 +41,142 @@
     .chips{display:flex;flex-wrap:wrap;gap:10px}
     .chip{background:var(--brand);color:#fff;padding:8px 14px;border-radius:20px;font-size:.9rem}
     
+    /* Homepage Hero Button and Social Icons Styles */
+    .btn { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+      padding: 10px 16px; 
+      border-radius: 12px; 
+      font-weight: 600; 
+      border: 1px solid rgba(255,255,255,.25); 
+      transition: background 0.3s 
+    }
+    .btn:hover { background: rgba(255,255,255,.2); }
+    .btn-primary { background: #fff; color: #0a2240; border-color: #fff }
+    .btn-outline { background: transparent; color: #fff }
+    .social { display: flex; gap: 12px; align-items: center }
+    .icon-btn {
+      width: 38px; height: 38px; border-radius: 11px; border: 1px solid rgba(255,255,255,.25);
+      display: flex; align-items: center; justify-content: center; transition: .2s
+    }
+    .icon-btn:hover { background: rgba(255,255,255,.12); transform: translateY(-1px) }
+    
+    /* Skills Section Styles */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    @media (min-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .skill-category {
+      background: var(--light);
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid var(--brand);
+    }
+    .skill-category h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: var(--brand-dark);
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .skill-item {
+      margin-bottom: 18px;
+    }
+    .skill-item:last-child { margin-bottom: 0; }
+    .skill-item span {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .progress-bar-container {
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      background-color: var(--brand);
+      height: 100%;
+      width: 85%; /* Default, will be overridden by inline style */
+      border-radius: 5px;
+      transition: width 1s ease-out;
+    }
+    /* Remove .progress-bar::after as we're reverting to inline style for width */
+
+    /* Table Styles */
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: var(--light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .custom-table th,
+    .custom-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .custom-table th {
+      background-color: var(--brand);
+      color: var(--white);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .custom-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .custom-table tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+    .custom-table td {
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .custom-table td:first-child {
+      font-weight: 500;
+    }
+    @media (max-width: 600px) {
+      .custom-table thead {
+        display: none;
+      }
+      .custom-table, .custom-table tbody, .custom-table tr, .custom-table td {
+        display: block;
+        width: 100%;
+      }
+      .custom-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .custom-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+      }
+      .custom-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: calc(50% - 30px);
+        text-align: left;
+        font-weight: 600;
+        color: var(--brand-dark);
+      }
+    }
+
     /* Footer */
     footer{background:var(--dark);color:#ccc;text-align:center;padding:20px;font-size:.9rem}
     
@@ -90,15 +226,14 @@
         <p>Phone: +880 1871 295 320</p>
         <p>Location: Dhaka, Bangladesh</p>
         <div class="cta-row">
-          <!-- LinkedIn button -->
-          <a class="btn" href="https://www.linkedin.com/in/abdullah-al-fahim/" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.33 6 7.66V24h-5V16.4c0-1.81-.03-4.15-2.53-4.15-2.53 0-2.92 1.98-2.92 4.02V24H8z"/>
-            </svg>
-            LinkedIn
+          <!-- LinkedIn follow-style button (links to your profile/company) -->
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/abdullah-al-fahim/" target="_blank" rel="noopener">
+            <!-- LinkedIn SVG -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a66c2" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.33 6 7.66V24h-5V16.4c0-1.81-.03-4.15-2.53-4.15-2.53 0-2.92 1.98-2.92 4.02V24H8z"/></svg>
+            Follow on LinkedIn
           </a>
-          <!-- Save as PDF button -->
-          <button class="btn" onclick="window.print()">Save as PDF</button>
+
+          <!-- Social icons -->
         </div>
       </div>
       <div class="header-photo">
@@ -173,47 +308,247 @@
 
   <!-- Technical Skills -->
   <section class="container">
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="chips">
-      <span class="chip">System Toubleshooting</span>
-      <span class="chip">Routing & Switching</span>
-      <span class="chip">Network Congiguration</span>
-      <span class="chip">Technical Documentation</span>
-      <span class="chip">IT Support</span>
-      <span class="chip">System Development</span>
-      <span class="chip">HTML</span>
-      <span class="chip">CSS</span>
-      <span class="chip">Notion</span>
-      <span class="chip">Adobe Creative Suite</span>
-      <span class="chip">AutoCAD</span>
-      <span class="chip">Git/GitHub</span>
-      <span class="chip">Windows Server Adminstration</span>
-      <span class="chip">Linux</span>
-      <span class="chip">MacOS</span>
-      <span class="chip">LaTeX</span>
-      <span class="chip">Office 365</span>
-      <span class="chip">LiveU</span>
-      <span class="chip">Wordpress Customization</span>
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Technical Skills</h3>
+        <div class="skill-item">
+          <span>Routing</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 85%;">85%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Switching</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 80%;">80%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Firewall</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 90%;">90%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Web Security</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 75%;">75%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Mail security</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 85%;">85%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>E-mail encryption</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 80%;">80%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Windows server</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 90%;">90%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Linux server</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 85%;">85%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Load balancer</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 75%;">75%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Virtualization</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 80%;">80%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Broadcast playout</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 90%;">90%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Troubleshooting</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 95%;">95%</div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Organizational Skills</h3>
+        <div class="skill-item">
+          <span>Communication</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 95%;">95%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Leadership</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 90%;">90%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Time Management</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 85%;">85%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Attention to Detail</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 90%;">90%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Problem Solving</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 88%;">88%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Creativity</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 82%;">82%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Team Management</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 87%;">87%</div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Event Management</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 92%;">92%</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Organizational Skills -->
+  <!-- Professional Courses & Training -->
   <section class="container">
-    <h2 class="section-title">Organizational Skills</h2>
-    <div class="chips">
-      <span class="chip">Time Management</span>
-      <span class="chip">Communication</span>
-      <span class="chip">Streamlined</span>
-      <span class="chip">Structured</span>
-      <span class="chip">Attention to Detail</span>
-      <span class="chip">Data Oriented</span>
-      <span class="chip">Leadership</span>
-      <span class="chip">Problem Solving</span>
-      <span class="chip">Creative</span>
-      <span class="chip">Initiative Maker</span>
-      <span class="chip">Industrious</span>
-      <span class="chip">Resilient</span>
-    </div>
+    <h2 class="section-title">Professional Courses & Training</h2>
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Course Title</th>
+          <th>Organization</th>
+          <th>Year Obtained</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Course Title">Full-Stack Web Development</td>
+          <td data-label="Organization">Coursera</td>
+          <td data-label="Year Obtained">2022</td>
+        </tr>
+        <tr>
+          <td data-label="Course Title">Agile Project Management</td>
+          <td data-label="Organization">Udemy</td>
+          <td data-label="Year Obtained">2021</td>
+        </tr>
+        <tr>
+          <td data-label="Course Title">Cisco Certified Network Associate (CCNA)</td>
+          <td data-label="Organization">Cisco Networking Academy</td>
+          <td data-label="Year Obtained">2023</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Achievements -->
+  <section class="container">
+    <h2 class="section-title">Achievements</h2>
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Achievement</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Achievement">Winner - National Coding Competition</td>
+          <td data-label="Year">2021</td>
+        </tr>
+        <tr>
+          <td data-label="Achievement">Dean’s List</td>
+          <td data-label="Year">2019, 2020</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Awards & Certifications -->
+  <section class="container">
+    <h2 class="section-title">Awards & Certifications</h2>
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Award/Certification</th>
+          <th>Issuing Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Award/Certification">Certified Frontend Developer</td>
+          <td data-label="Issuing Body">W3Schools</td>
+        </tr>
+        <tr>
+          <td data-label="Award/Certification">Google UX Design Certificate</td>
+          <td data-label="Issuing Body">Google</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Languages -->
+  <section class="container">
+    <h2 class="section-title">Languages</h2>
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Language</th>
+          <th>Reading</th>
+          <th>Writing</th>
+          <th>Speaking</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Language">English</td>
+          <td data-label="Reading">Fluent</td>
+          <td data-label="Writing">Fluent</td>
+          <td data-label="Speaking">Fluent</td>
+        </tr>
+        <tr>
+          <td data-label="Language">Bengali</td>
+          <td data-label="Reading">Native</td>
+          <td data-label="Writing">Native</td>
+          <td data-label="Speaking">Native</td>
+        </tr>
+        <tr>
+          <td data-label="Language">Hindi</td>
+          <td data-label="Reading">Conversational</td>
+          <td data-label="Writing">Conversational</td>
+          <td data-label="Speaking">Conversational</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- Extra Curricular Activities -->
@@ -280,49 +615,6 @@
         <li>Lead a creative team over the top to generate daily content and promotional materials</li>
       </ul>
     </div>
-  </section>
-
-  <!-- Achievements -->
-  <section class="container">
-    <h2 class="section-title">Achievements</h2>
-    <ul>
-      <li>Winner - National Coding Competition 2021</li>
-      <li>Dean’s List - 2019 & 2020</li>
-    </ul>
-  </section>
-
-  <!-- Professional Courses & Training -->
-  <section class="container">
-    <h2 class="section-title">Professional Courses & Training</h2>
-    <ul>
-      <li>Full-Stack Web Development - Coursera</li>
-      <li>Agile Project Management - Udemy</li>
-    </ul>
-  </section>
-
-  <!-- Awards & Certifications -->
-  <section class="container">
-    <h2 class="section-title">Awards & Certifications</h2>
-    <ul>
-      <li>Certified Frontend Developer - W3Schools</li>
-      <li>Google UX Design Certificate</li>
-    </ul>
-  </section>
-
-  <!-- Languages -->
-  <section class="container">
-    <h2 class="section-title">Languages</h2>
-    <ul>
-      <li>English - Fluent</li>
-      <li>Bengali - Native</li>
-      <li>Hindi - Conversational</li>
-    </ul>
-  </section>
-
-  <!-- References -->
-  <section class="container">
-    <h2 class="section-title">References</h2>
-    <p>Available upon request</p>
   </section>
 
   <!-- Footer -->
