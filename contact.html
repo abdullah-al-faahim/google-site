@@ -13,7 +13,7 @@
       --brand-400: #7d75ff;
       --brand-500: #5b42ff;  /* Primary */
       --brand-600: #5e36f5;
-      --brand-700: #522ad8;  /* Muted text */
+      --brand-700: #050405;  /* Muted text */
       --brand-800: #4225ae;
       --brand-900: #382689;
       --brand-950: #231650;  /* Dark navy */
@@ -179,6 +179,30 @@
     @media (max-width: 560px) {
       .grid-3, .grid-2 { grid-template-columns: 1fr }
     }
+
+    @media (max-width: 480px) {
+      #googleFormPopup {
+        width: calc(100% - 40px);
+        right: 20px;
+        left: 20px;
+        bottom: 80px;
+        height: 80vh; /* Adjust height for better fit on small screens */
+      }
+      #discussionBtn {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+    
+    /* Genie Animation for Popup */
+    #googleFormPopup {
+      transform: scale(0);
+      transform-origin: bottom;
+      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    #googleFormPopup.show {
+      transform: scale(1);
+    }
   </style>
 </head>
 <body>
@@ -211,8 +235,7 @@
         </a>
       </div>
       <div style="margin-top: 20px; text-align: center;">
-        <h4>Business Card</h4>
-        <img src="channeli-businesscard.webp" alt="Abdullah Al Fahim Business Card" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/channeli-businesscard.webp" alt="Abdullah Al Fahim Business Card" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
       </div>
     </div>
 
@@ -242,6 +265,13 @@
       </form>
     </div>
     
+  </div>
+</div>
+
+<!-- GOOGLE MAP SECTION -->
+<div class="container animate-on-scroll" style="padding-top: 20px;">
+  <div class="map-container" style="border-radius: 16px; overflow: hidden; border: 1px solid var(--brand); height: 480px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.433233291881!2d90.39767587532543!3d23.767582278658757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c76476921ad7%3A0x9cd506c25a4806f3!2sChannel%20i!5e0!3m2!1sen!2sbd!4v1756437605239!5m2!1sen!2sbd" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
 
@@ -276,11 +306,19 @@
     <div class="footer-bottom">© 2025 Abdullah Al Fahim | All Rights Reserved</div>
   </footer>
 
+  <!-- Google Form Popup Container -->
+  <div id="googleFormPopup" style="position: fixed; bottom: 100px; right: 20px; width: 400px; height: 520px; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9998; overflow: hidden;">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScASIN8VO3TQtaIbwbf9zco_Q1ebrTEL3P_QfKH6PXiQjCWuw/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
 
-
-  <!-- Back to Top Button -->
-  <button id="backToTop" aria-label="Back to Top" title="Back to Top">
-    ↑
+  <!-- Discussion Button to toggle Google Form Popup -->
+  <button id="discussionBtn" style="position: fixed; bottom: 40px; right: 40px; background: var(--brand); color: #fff; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999;">
+    <svg id="discussionIcon" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+      <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+    </svg>
+    <svg id="closeIcon" width="24" height="24" viewBox="0 0 24 24" fill="#fff" style="display: none;">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </svg>
   </button>
 
   <script>
@@ -304,20 +342,47 @@
       observer.observe(el);
     });
 
-    // Back to Top Button logic
-    const backToTopBtn = document.getElementById('backToTop');
+    // Google Form Popup functionality
+    const discussionBtn = document.getElementById('discussionBtn');
+    const googleFormPopup = document.getElementById('googleFormPopup');
+    const discussionIcon = document.getElementById('discussionIcon');
+    const closeIcon = document.getElementById('closeIcon');
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTopBtn.classList.add('show');
+    let popupOpened = false;
+
+    function openPopup() {
+      googleFormPopup.classList.add('show');
+      googleFormPopup.style.display = 'block'; // Ensure it's block for animation to work
+      discussionIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+      popupOpened = true;
+    }
+
+    function closePopup() {
+      googleFormPopup.classList.remove('show');
+      googleFormPopup.addEventListener('transitionend', function handler() {
+        googleFormPopup.style.display = 'none';
+        googleFormPopup.removeEventListener('transitionend', handler);
+      });
+      discussionIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+      popupOpened = false;
+    }
+
+    discussionBtn.addEventListener('click', () => {
+      if (popupOpened) {
+        closePopup();
       } else {
-        backToTopBtn.classList.remove('show');
+        openPopup();
       }
     });
 
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    // Auto-popup after 2500ms if not opened by click
+    setTimeout(() => {
+      if (!popupOpened) {
+        openPopup();
+      }
+    }, 2500);
   </script>
 </body>
 </html>
