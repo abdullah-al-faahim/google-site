@@ -307,7 +307,8 @@
   </footer>
 
   <!-- Google Form Popup Container -->
-  <div id="googleFormPopup" style="position: fixed; bottom: 100px; right: 20px; width: 400px; height: 520px; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9998; overflow: hidden;">
+  <div id="googleFormPopup" style="position: fixed; bottom: 100px; right: 20px; width: 400px; height: 400px; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9998; overflow: hidden;">
+    <button id="popupCloseBtn" style="position: absolute; top: 10px; left: 10px; background: var(--brand); border: none; font-size: 24px; cursor: pointer; color: #fff; z-index: 10000; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&times;</button>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScASIN8VO3TQtaIbwbf9zco_Q1ebrTEL3P_QfKH6PXiQjCWuw/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 
@@ -347,6 +348,7 @@
     const googleFormPopup = document.getElementById('googleFormPopup');
     const discussionIcon = document.getElementById('discussionIcon');
     const closeIcon = document.getElementById('closeIcon');
+    const popupCloseBtn = document.getElementById('popupCloseBtn'); // New close button
 
     let popupOpened = false;
 
@@ -379,10 +381,14 @@
 
     // Auto-popup after 2500ms if not opened by click
     setTimeout(() => {
-      if (!popupOpened) {
+      // Check if it's a mobile view (e.g., screen width less than or equal to 420px)
+      if (!popupOpened && window.innerWidth > 420) {
         openPopup();
       }
     }, 2500);
+
+    // Close popup when the new close button is clicked
+    popupCloseBtn.addEventListener('click', closePopup);
   </script>
 </body>
 </html>
