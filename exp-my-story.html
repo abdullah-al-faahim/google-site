@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Story - Abdullah Al Fahim</title>
   <style>
-  :root {
+    /* Gemini Optimized CSS */
+    :root {
       /* Brand Scale */
-      --brand-50:  #eceeff;
+      --brand-50: #eceeff;
       --brand-100: #dde0ff;
       --brand-200: #c2c6ff;
       --brand-300: #9c9fff;
@@ -20,582 +22,651 @@
       --brand-950: #231650;
 
       /* Core Palette */
-      --brand:   var(--brand-500);
-      --dark:    var(--brand-950);
-      --accent:  var(--brand-400);
-      --text:    #222222;
-      --muted:   var(--brand-700);
-      --bg:      #ffffff;
-      --card:    var(--brand-50);
-      --border:  var(--brand-200);
+      --brand: var(--brand-500);
+      --dark: var(--brand-950);
+      --accent: var(--brand-400);
+      --text: #222222;
+      --muted: var(--brand-700);
+      --bg: #ffffff;
+      --card: var(--brand-50);
+      --border: var(--brand-200);
 
       /* Utilities */
       --white: #ffffff;
       --black: #000000;
     }
 
-  /* Base */
-  *{
-    box-sizing:border-box
-  }
-  html,body{
-    margin:0;
-    padding:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:"Segoe UI",Tahoma,sans-serif
-  }
-  a{
-    color:inherit;
-    text-decoration:none
-  }
-  img{
-    max-width:100%;
-    display:block
-  }
+    /* Base */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-  /* Layout helpers */
-  .container{
-    max-width:1100px;
-    margin:0 auto;
-    padding:60px 20px
-  }
-  .section-title{
-    font-size:2rem;
-    margin:0 0 24px;
-    text-align:center;
-    color:var(--brand)
-  }
-  .sub{
-    color:var(--border);
-    font-size:0.95rem
-  }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif
+    }
 
-  /* HERO full-width */
-  .hero-wrap{
-    width:100%;
-    background:linear-gradient(135deg,var(--brand),var(--dark));
-    color:#fff
-  }
-  .hero{
-    display:grid;
-    grid-template-columns:0.95fr 1.05fr;
-    gap:28px;
-    align-items:center
-  }
-  .hero .photo{
-    border-radius:20px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.18);
-    box-shadow:0 18px 40px rgba(0,0,0,.25);
-    background:#0f172a;
-    aspect-ratio:4/5;
-    display:flex;
-    align-items:center;
-    justify-content:center
-  }
-  .hero h1{
-    font-size:clamp(28px,4.5vw,44px);
-    margin:0 0 10px
-  }
-  .hero .lead{
-    font-size:1.08rem;
-    line-height:1.6;
-    color:#e9edf5;
-    margin:0 0 20px;
-    max-width:680px
-  }
-  .cta-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    align-items:center;
-    margin:18px 0 14px
-  }
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:10px 16px;
-    border-radius:12px;
-    font-weight:600;
-    border:1px solid rgba(255,255,255,.25);
-    transition: background 0.3s
-  }
-  .btn:hover { background: rgba(255,255,255,.2); }
-  .btn-primary{
-    background:#fff;
-    color:#0a2240;
-    border-color:#fff
-  }
-  .btn-primary:hover {
-    background-color: var(--brand-600);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-  }
-  .btn-outline{
-    background:transparent;
-    color:#fff
-  }
-  /* New Secondary Button Styles */
-  .btn-secondary {
-    background-color: var(--brand);
-    color: var(--white);
-    border: 1px solid var(--brand);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  }
-  .btn-secondary:hover {
-    background-color: transparent;
-    color: var(--brand);
-    border-color: var(--brand);
-  }
+    a {
+      color: inherit;
+      text-decoration: none
+    }
 
-  .social{
-    display:flex;
-    gap:12px;
-    align-items:center
-  }
-  .icon-btn{
-    width:38px;
-    height:38px;
-    border-radius:11px;
-    border:1px solid rgba(255,255,255,.25);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:.2s
-  }
-  .icon-btn:hover{ 
-    background:rgba(255,255,255,.12);
-    transform:translateY(-1px)
-  }
+    img {
+      max-width: 100%;
+      display: block
+    }
 
-  /* STORY SECTION */
-  .story {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    line-height: 1.8;
-  }
+    /* Layout helpers */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px
+    }
 
-  .story h2 {
-    margin-top: 0;
-    font-size: 1.8rem;
-    color: #0f172a;
-  }
+    .section-title {
+      font-size: 2rem;
+      margin: 0 0 24px;
+      text-align: center;
+      color: var(--brand)
+    }
 
-  /* Skills */
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-  }
-  .skill {
-    background: var(--bg);
-    border: 2px solid var(--brand);
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: 0.3s;
-    color: var(--brand);
-  }
-  .skill:hover {
-    background: var(--brand);
-    color: white;
-    transform: scale(1.05);
-  }
+    .sub {
+      color: var(--border);
+      font-size: 0.95rem
+    }
 
-  /* Achievements */
-  .achievements {
-    list-style: none;
-    padding: 0;
-    max-width: 700px;
-    margin: auto;
-  }
-  .achievements li {
-    background: var(--bg);
-    padding: 15px 20px;
-    margin: 10px 0;
-    border-left: 5px solid var(--brand);
-    border-radius: 6px;
-    font-size: 1.1rem;
-    transition: 0.3s;
-  }
-  .achievements li:hover {
-    background: #f1f5ff;
-  }
+    /* HERO full-width */
+    .hero-wrap {
+      width: 100%;
+      background: linear-gradient(135deg, var(--brand), var(--dark));
+      color: #fff
+    }
 
-  /* Timeline Styles */
-  .timeline-section {
-    padding: 60px 0;
-    background: var(--bg);
-  }
+    .hero {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: center
+    }
 
-  .timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
+    .hero .photo {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .18);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+      background: #0f172a;
+      aspect-ratio: 4/5;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
 
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background: var(--border);
-    transform: translateX(-50%);
-  }
+    .hero h1 {
+      font-size: clamp(28px, 4.5vw, 44px);
+      margin: 0 0 10px
+    }
 
-  .timeline-item {
-    margin-bottom: 40px;
-    position: relative;
-    width: 50%;
-    padding: 10px 40px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
+    .hero .lead {
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: #e9edf5;
+      margin: 0 0 20px;
+      max-width: 680px
+    }
 
-  .timeline-item.appear {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin: 18px 0 14px
+    }
 
-  .timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
-  }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, .25);
+      transition: background .3s, transform .3s, box-shadow .3s
+    }
 
-  .timeline-item:nth-child(even) {
-    left: 50%;
-    text-align: left;
-  }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, .25)
+    }
 
-  .timeline-item-content {
-    background: var(--card);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    border: 1px solid var(--border);
-  }
+    .btn-primary {
+      background: #fff;
+      color: #0a2240;
+      border-color: #fff
+    }
 
-  .timeline-item-content h3 {
-    margin-top: 0;
-    color: var(--brand-700);
-    font-size: 1.4rem;
-  }
+    .btn-primary:hover {
+      background-color: var(--brand-600)
+    }
 
-  .timeline-item-content p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text);
-  }
+    .btn-outline {
+      background: transparent;
+      color: #fff
+    }
 
-  .timeline-item-content .date {
-    font-weight: bold;
-    color: var(--brand);
-    margin-bottom: 10px;
-    display: block;
-  }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, .2)
+    }
 
-  .timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background: var(--brand);
-    border-radius: 50%;
-    top: 20px;
-    z-index: 1;
-    border: 2px solid var(--bg);
-  }
+    .btn-secondary {
+      background-color: var(--brand);
+      color: var(--white);
+      border: 1px solid var(--brand)
+    }
 
-  .timeline-item:nth-child(odd)::after {
-    right: -7px;
-  }
+    .btn-secondary:hover {
+      background-color: transparent;
+      color: var(--brand);
+      border-color: var(--brand)
+    }
 
-  .timeline-item:nth-child(even)::after {
-    left: -7px;
-  }
+    .social {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
 
-  @media (max-width: 768px) {
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      border: 1px solid rgba(255, 255, 255, .25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .2s
+    }
+
+    .icon-btn:hover {
+      background: rgba(255, 255, 255, .12);
+      transform: translateY(-1px)
+    }
+
+    /* STORY SECTION */
+    .story {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+      line-height: 1.8
+    }
+
+    .story h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #0f172a
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center
+    }
+
+    .skill {
+      background: var(--bg);
+      border: 2px solid var(--brand);
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      transition: .3s;
+      color: var(--brand)
+    }
+
+    .skill:hover {
+      background: var(--brand);
+      color: #fff;
+      transform: scale(1.05)
+    }
+
+    /* Achievements */
+    .achievements {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: auto
+    }
+
+    .achievements li {
+      background: var(--bg);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-left: 5px solid var(--brand);
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: .3s
+    }
+
+    .achievements li:hover {
+      background: #f1f5ff
+    }
+
+    /* Timeline Styles */
+    .timeline-section {
+      padding: 60px 0;
+      background: var(--bg)
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 0
+    }
+
     .timeline::before {
-      left: 20px;
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: var(--border);
+      transform: translateX(-50%)
     }
 
     .timeline-item {
-      width: 100%;
-      padding-left: 60px;
-      padding-right: 15px;
+      margin-bottom: 40px;
+      position: relative;
+      width: 50%;
+      padding: 10px 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease-out, transform .6s ease-out
     }
 
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
+    .timeline-item.appear {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .timeline-item:nth-child(odd) {
       left: 0;
-      text-align: left;
+      text-align: right
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left
+    }
+
+    .timeline-item-content {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+      border: 1px solid var(--border)
+    }
+
+    .timeline-item-content h3 {
+      margin-top: 0;
+      color: var(--brand-700);
+      font-size: 1.4rem
+    }
+
+    .timeline-item-content p {
+      font-size: .95rem;
+      line-height: 1.6;
+      color: var(--text)
+    }
+
+    .timeline-item-content .date {
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: 10px;
+      display: block
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: var(--brand);
+      border-radius: 50%;
+      top: 20px;
+      z-index: 1;
+      border: 2px solid var(--bg)
     }
 
     .timeline-item:nth-child(odd)::after {
-      left: 13px;
-      right: auto;
+      right: -7px
     }
 
     .timeline-item:nth-child(even)::after {
-      left: 13px;
+      left: -7px
     }
-  }
 
-  /* Certifications */
-  .certifications {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  .certifications img {
-    width: 120px;
-    height: auto;
-    transition: 0.3s;
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
-  }
-  .certifications img:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
-  }
+    /* Certifications */
+    .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px
+    }
 
-  /* Gallery - Bento Grid */
-  .gallery-section {
-    padding: 60px 0;
-    background: var(--bg);
-  }
+    .certifications img {
+      width: 120px;
+      height: auto;
+      transition: .3s;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, .2))
+    }
 
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-  }
+    .certifications img:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .25))
+    }
 
-  .gallery-item {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+    /* Gallery - Bento Grid */
+    .gallery-section {
+      padding: 60px 0;
+      background: var(--bg)
+    }
 
-  .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-  .gallery-item:hover img {
-    transform: scale(1.05);
-  }
-
-  .gallery-item-wide {
-    grid-column: span 2;
-  }
-
-  .gallery-item-tall {
-    grid-row: span 2;
-  }
-
-  .gallery-item-large {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-
-  @media (max-width: 768px) {
     .gallery-grid {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px
     }
-    .gallery-item-wide, .gallery-item-tall, .gallery-item-large {
-      grid-column: auto;
-      grid-row: auto;
-    }
-  }
 
-  /* Animations */
-  .fade-in-bottom {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+      position: relative;
+      transition: transform .3s ease, box-shadow .3s ease
+    }
 
-  .fade-in-bottom.appear {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .15)
+    }
 
-  /* Footer */
-  footer{
-    width:100%;
-    background:var(--dark);
-    color:#fff;
-    padding:40px 20px;
-    margin-top:60px
-  }
-  .footer-container{
-    max-width:1100px;
-    margin:0 auto;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    gap:30px
-  }
-  .footer-nav,.footer-contact{
-    flex:1 1 250px
-  }
-  .footer-nav h3,.footer-contact h3{
-    margin-bottom:15px;
-    color:var(--brand)
-  }
-  .footer-nav ul{
-    list-style:none;
-    margin:0;
-    padding:0
-  }
-  .footer-nav li{
-    margin:8px 0
-  }
-  .footer-nav a{
-    color:#fff
-  }
-  .footer-nav a:hover{
-    color:var(--accent)
-  }
-  .footer-contact p{
-    margin:6px 0;
-    color:#e9ecef
-  }
-  .footer-bottom{
-    text-align:center;
-    margin-top:26px;
-    color:#adb5bd;
-    font-size:.92rem
-  }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease
+    }
 
-  /* Back to Top Button */
-  .back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: var(--brand);
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    transition: background-color 0.3s, transform 0.3s;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-  }
+    .gallery-item:hover img {
+      transform: scale(1.05)
+    }
 
-  .back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-5px);
-  }
+    .gallery-item-wide {
+      grid-column: span 2
+    }
 
-  .back-to-top:hover {
-    background-color: var(--brand-600);
-    transform: translateY(-8px) scale(1.05);
-  }
+    .gallery-item-tall {
+      grid-row: span 2
+    }
 
-  /* Responsive */
-  @media (max-width:980px){
-    .hero{
-      grid-template-columns:1fr;
-      gap:18px
+    .gallery-item-large {
+      grid-column: span 2;
+      grid-row: span 2
     }
-    .hero .photo{
-      max-width:420px;
-      margin:0 auto
+
+    /* Animations */
+    .fade-in-bottom {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease-out, transform .6s ease-out
     }
-  }
-  @media (max-width:860px){
-    .grid-3{
-      grid-template-columns:1fr 1fr
+
+    .fade-in-bottom.appear {
+      opacity: 1;
+      transform: translateY(0)
     }
-    .timeline{
-      grid-template-columns:1fr
+
+    /* Footer */
+    footer {
+      width: 100%;
+      background: var(--dark);
+      color: #fff;
+      padding: 40px 20px;
+      margin-top: 60px
     }
-  }
-  @media (max-width:560px){
-    .grid-3,.grid-2{
-      grid-template-columns:1fr
-    }
-  }
-  @media (max-width: 768px) {
-    .hero h1 { 
-      font-size: 2.2rem; 
-    }
-    .skills-list {
-      flex-direction: column;
-      align-items: center;
-    }
+
     .footer-container {
-      flex-direction: column;
-      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px
     }
-  }
 
+    .footer-nav,
+    .footer-contact {
+      flex: 1 1 250px
+    }
+
+    .footer-nav h3,
+    .footer-contact h3 {
+      margin-bottom: 15px;
+      color: var(--brand)
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    .footer-nav li {
+      margin: 8px 0
+    }
+
+    .footer-nav a {
+      color: #fff
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent)
+    }
+
+    .footer-contact p {
+      margin: 6px 0;
+      color: #e9ecef
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 26px;
+      color: #adb5bd;
+      font-size: .92rem
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--brand);
+      color: #fff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+      transition: background-color .3s, transform .3s, opacity .3s, visibility .3s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-5px)
+    }
+
+    .back-to-top:hover {
+      background-color: var(--brand-600);
+      transform: translateY(-8px) scale(1.05)
+    }
+
+    /* Responsive */
+    @media (max-width:980px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 18px
+      }
+
+      .hero .photo {
+        max-width: 420px;
+        margin: 0 auto
+      }
+    }
+
+    @media (max-width:860px) {
+      .grid-3 {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .timeline {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media (max-width:768px) {
+      .timeline::before {
+        left: 20px
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 15px
+      }
+
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        left: 0;
+        text-align: left
+      }
+
+      .timeline-item:nth-child(odd)::after,
+      .timeline-item:nth-child(even)::after {
+        left: 13px;
+        right: auto
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr
+      }
+
+      .gallery-item-wide,
+      .gallery-item-tall,
+      .gallery-item-large {
+        grid-column: auto;
+        grid-row: auto
+      }
+
+      .hero h1 {
+        font-size: 2.2rem
+      }
+
+      .skills-list {
+        flex-direction: column;
+        align-items: center
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center
+      }
+    }
+
+    @media (max-width:560px) {
+
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr
+      }
+    }
   </style>
 </head>
+
 <body>
   <!-- HERO -->
   <div class="hero-wrap fade-in-bottom">
     <div class="container hero">
       <div class="photo">
-        <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/Fahims%20Biography.webp" alt="Abdullah Al Fahim" loading="lazy" />
+        <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/Fahims%20Biography.webp"
+          alt="Abdullah Al Fahim" loading="lazy" width="420" height="525" />
       </div>
       <div>
         <h1>Abdullah Al Fahim</h1>
         <p class="lead">
-          Born in Mirpur, Dhaka in 1998, Abdullah Al Fahim grew up as an active and straightforward child, 
-          moving through eight different schools across Bangladesh during his early education. Despite constant 
-          changes, he excelled academically. His professional journey began with leadership roles at Farhanasbrainstation 
-          and the National University Skill Development Forum, where he rose to become Executive Director of Business 
-          Development and Head of Branding and Communication, respectively. After graduation in 2023, Fahim transitioned 
+          Born in Mirpur, Dhaka in 1998, Abdullah Al Fahim grew up as an active and straightforward child,
+          moving through eight different schools across Bangladesh during his early education. Despite constant
+          changes, he excelled academically. His professional journey began with leadership roles at
+          Farhanasbrainstation
+          and the National University Skill Development Forum, where he rose to become Executive Director of Business
+          Development and Head of Branding and Communication, respectively. After graduation in 2023, Fahim transitioned
           into his career, joining Channel i as a Broadcast Engineer (Transmission) in 2024.
         </p>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://www.linkedin.com/in/abdullah-al-fahim/" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a66c2" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.33 6 7.66V24h-5V16.4c0-1.81-.03-4.15-2.53-4.15-2.53 0-2.92 1.98-2.92 4.02V24H8z"/></svg>
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/abdullah-al-fahim/" target="_blank"
+            rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a66c2" aria-hidden="true">
+              <path
+                d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.33 6 7.66V24h-5V16.4c0-1.81-.03-4.15-2.53-4.15-2.53 0-2.92 1.98-2.92 4.02V24H8z" />
+            </svg>
             Follow on LinkedIn
           </a>
 
           <div class="social">
-            <a class="icon-btn" href="https://www.linkedin.com/in/abdullah-al-faahim/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.33 6 7.66V24h-5V16.4c0-1.81-.03-4.15-2.53-4.15-2.53 0-2.92 1.98-2.92 4.02V24H8z"/></svg>
+            <a class="icon-btn" href="https://www.linkedin.com/in/abdullah-al-faahim/" target="_blank" rel="noopener"
+              aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff">
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.33 6 7.66V24h-5V16.4c0-1.81-.03-4.15-2.53-4.15-2.53 0-2.92 1.98-2.92 4.02V24H8z" />
+              </svg>
             </a>
-            <a class="icon-btn" href="https://github.com/abdullah-al-faahim" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.27.82-.6v-2.1c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.35-1.78-1.35-1.78-1.1-.77.09-.75.09-.75 1.22.09 1.87 1.26 1.87 1.26 1.08 1.86 2.84 1.32 3.53 1.01.11-.8.42-1.32.76-1.63-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.47-2.36 1.24-3.19-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.22a11.5 11.5 0 0 1 6 0c2.3-1.54 3.3-1.22 3.3-1.22.66 1.65.24 2.87.12 3.17.77.83 1.24 1.89 1.24 3.2 0 4.58-2.8 5.6-5.47 5.9.43.36.81 1.07.81 2.16v3.2c0 .33.22.71.83.59A12 12 0 0 0 12 .5z"/></svg>
+            <a class="icon-btn" href="https://github.com/abdullah-al-faahim" target="_blank" rel="noopener"
+              aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff">
+                <path
+                  d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.27.82-.6v-2.1c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.35-1.78-1.35-1.78-1.1-.77.09-.75.09-.75 1.22.09 1.87 1.26 1.87 1.26 1.08 1.86 2.84 1.32 3.53 1.01.11-.8.42-1.32.76-1.63-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.47-2.36 1.24-3.19-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.22a11.5 11.5 0 0 1 6 0c2.3-1.54 3.3-1.22 3.3-1.22.66 1.65.24 2.87.12 3.17.77.83 1.24 1.89 1.24 3.2 0 4.58-2.8 5.6-5.47 5.9.43.36.81 1.07.81 2.16v3.2c0 .33.22.71.83.59A12 12 0 0 0 12 .5z" />
+              </svg>
             </a>
-            <a class="icon-btn" href="https://facebook.com/abdullah.al.faahim" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M18.896 0H5.104C2.281 0 0 2.281 0 5.104v13.792C0 21.719 2.281 24 5.104 24h7.417v-9.294H9.691v-3.622h2.83V8.413c0-2.807 1.713-4.338 4.213-4.338 1.197 0 2.229.089 2.53.129v2.936h-1.738c-1.363 0-1.627.648-1.627 1.598v2.096h3.255l-.424 3.622h-2.831V24h5.556C21.719 24 24 21.719 24 18.896V5.104C24 2.281 21.719 0 18.896 0z"/></svg>
+            <a class="icon-btn" href="https://facebook.com/abdullah.al.faahim" target="_blank" rel="noopener"
+              aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff">
+                <path
+                  d="M18.896 0H5.104C2.281 0 0 2.281 0 5.104v13.792C0 21.719 2.281 24 5.104 24h7.417v-9.294H9.691v-3.622h2.83V8.413c0-2.807 1.713-4.338 4.213-4.338 1.197 0 2.229.089 2.53.129v2.936h-1.738c-1.363 0-1.627.648-1.627 1.598v2.096h3.255l-.424 3.622h-2.831V24h5.556C21.719 24 24 21.719 24 18.896V5.104C24 2.281 21.719 0 18.896 0z" />
+              </svg>
             </a>
-            <a class="icon-btn" href="https://www.youtube.com/@abdullah-al-faahim" target="_blank" rel="noopener" aria-label="YouTube">
-              <svg width="18" height="18" viewBox="0 0 12 24" fill="#fff"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.3 3.5 12 3.5 12 3.5s-7.3 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2.1.6 9.4.6 9.4.6s7.3 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.2 3.5-6.2 3.5z"/></svg>
+            <a class="icon-btn" href="https://www.youtube.com/@abdullah-al-faahim" target="_blank" rel="noopener"
+              aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 12 24" fill="#fff">
+                <path
+                  d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.3 3.5 12 3.5 12 3.5s-7.3 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2.1.6 9.4.6 9.4.6s7.3 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.2 3.5-6.2 3.5z" />
+              </svg>
             </a>
           </div>
         </div>
@@ -607,16 +678,53 @@
 
   <!-- MAIN CONTAINER -->
   <div class="container">
-  
+
     <!-- STORY CONTENT -->
     <div class="story fade-in-bottom" style="display: none;">
       <h1>The Journey of Abdullah Al Fahim</h1>
 
-        <p>I am Abdullah Al Fahim, born in Mirpur, Dhaka, Bangladesh in 1998. From the earliest days of my childhood, I was known for being straightforward, curious, and active. I loved asking questions, moving about, and involving myself in everything that caught my interest. What made my childhood truly unique was my constantly shifting educational journey—I studied in eight different schools across the country before stepping into my youth. Each new institution, each classroom, and each group of friends gave me lessons beyond textbooks, shaping the foundation of who I am today. My formal education began in 2004 at St. John’s Government Primary School in Khulna, where I completed Baby Class and Class One. For me, this was the world opening up—chalk on blackboards, morning assemblies under the sun, and the energy of being among other children eager to learn. By 2006, my family had moved, and I found myself at 22 No. Chapta Government Primary School in Kashiani, Gopalganj, where I studied Class Two and Three. The rural atmosphere, with open fields surrounding the school, gave me a new perspective. Friendships came quickly, but I also learned how to adapt, to let go of one place and embrace another. Then came another shift—2007, when I moved to Winner Ideal School in Jamgora, Savar, Dhaka, and repeated Class Three. It was a reset of sorts, but it allowed me to strengthen my basics and grow more confident academically. In 2008, I entered BEPZA Public School and College, completing Class Four. The school’s structured environment introduced me to stricter discipline and a more formal education system. By 2009, I was in Gomail Government Primary School in Savar, Dhaka, where I studied Class Five. This was a memorable stage—I was more mature, more focused, and ready for the next level of education. In 2010, I began Class Six at Amin Model Town School and College, Navinagar, Savar, Dhaka, but only for half the year until June. Life moved again, and I transferred to Sristy Central School in Khulna, where I continued from July 2010 to May 2011, finishing Class Six and Class Seven. It was a phase of self-discovery, as I balanced moving between schools while keeping my studies steady. The real turning point came in 2012, when I joined Naebunnessa Institution and studied from Class Eight to Class Ten. Here, I flourished academically. In Class Eight, I earned a General Scholarship from the Dhaka Board for my outstanding performance in the Junior School Certificate (JSC) examination. That achievement still stands as one of the proudest moments of my student life—a validation of the resilience built through constant transitions. In 2015, I stepped into my college years at Haji Lalmia City College, Gopalganj, where I studied until 2017. These years were marked not just by academics, but by my growing interest in leadership, communication, and participation in broader student activities. By 2018, I entered my university life at the Institute of Science, Trade & Technology (ISTT), affiliated with the National University of Bangladesh. This was a defining chapter. I was no longer just a student; I became an active contributor to the vibrant campus culture. I joined several clubs that shaped my leadership and creativity: IEEE ISTT Student Branch – serving as an executive committee member, connecting with an international network of engineers; ISTT Innovation Hub – where technology turned from theory into practice, sparking creativity in applied projects; Suvonil Literature and Cultural Club – feeding my love for culture, literature, and artistic expression. But my involvement was not limited to campus alone. I actively participated in national and international organizations: as a Red Crescent Volunteer, I contributed to humanitarian causes, and as a Campus Ambassador for Bangladesh Youth Leadership Center (BYLC) and Youth Opportunities, I represented pioneering student development platforms, connecting with young leaders across the nation. My university years were colorful, energetic, and filled with experiences that made me more than a graduate—they made me a leader and a doer.</p>
+      <p>I am Abdullah Al Fahim, born in Mirpur, Dhaka, Bangladesh in 1998. From the earliest days of my childhood, I
+        was known for being straightforward, curious, and active. I loved asking questions, moving about, and involving
+        myself in everything that caught my interest. What made my childhood truly unique was my constantly shifting
+        educational journey—I studied in eight different schools across the country before stepping into my youth. Each
+        new institution, each classroom, and each group of friends gave me lessons beyond textbooks, shaping the
+        foundation of who I am today. My formal education began in 2004 at St. John’s Government Primary School in
+        Khulna, where I completed Baby Class and Class One. For me, this was the world opening up—chalk on blackboards,
+        morning assemblies under the sun, and the energy of being among other children eager to learn. By 2006, my
+        family had moved, and I found myself at 22 No. Chapta Government Primary School in Kashiani, Gopalganj, where I
+        studied Class Two and Three. The rural atmosphere, with open fields surrounding the school, gave me a new
+        perspective. Friendships came quickly, but I also learned how to adapt, to let go of one place and embrace
+        another. Then came another shift—2007, when I moved to Winner Ideal School in Jamgora, Savar, Dhaka, and
+        repeated Class Three. It was a reset of sorts, but it allowed me to strengthen my basics and grow more confident
+        academically. In 2008, I entered BEPZA Public School and College, completing Class Four. The school’s structured
+        environment introduced me to stricter discipline and a more formal education system. By 2009, I was in Gomail
+        Government Primary School in Savar, Dhaka, where I studied Class Five. This was a memorable stage—I was more
+        mature, more focused, and ready for the next level of education. In 2010, I began Class Six at Amin Model Town
+        School and College, Navinagar, Savar, Dhaka, but only for half the year until June. Life moved again, and I
+        transferred to Sristy ... [truncated]
 
-        <p>By 2021, I joined Farhanasbrainstation, a nationally recognized youth development platform on LinkedIn that worked on UN Sustainable Development Goals (SDGs). I started as a Content Writer, but through hard work and dedication, I rose to become the Executive Director of Business Development. I worked there until December 2023, leaving behind a strong footprint in the organization’s growth. In May 2023, I also joined the National University Skill Development Forum (NUSDF), an organization dedicated to enhancing the skills of National University students. I began as an Executive of Creative Media, and soon earned a promotion to Head of Branding and Communication, a role I held until February 2025. Meanwhile, I successfully completed my undergraduate degree from ISTT in October 2023, and by November, I proudly held my certificate in hand. It was the crowning moment of years of perseverance in both academics and extracurricular endeavors. After graduation, I explored opportunities in IT, working as a Graphic Designer and in various IT-related roles. But in 2024, I made a significant leap in my career by joining Channel i, Bangladesh’s first digital satellite television network, as a Broadcast Engineer (Transmission). This role gave me the chance to merge technology, media, and my love for innovation into a professional path that inspires me every day.</p>
+      <p>By 2021, I joined Farhanasbrainstation, a nationally recognized youth development platform on LinkedIn that
+        worked on UN Sustainable Development Goals (SDGs). I started as a Content Writer, but through hard work and
+        dedication, I rose to become the Executive Director of Business Development. I worked there until December 2023,
+        leaving behind a strong footprint in the organization’s growth. In May 2023, I also joined the National
+        University Skill Development Forum (NUSDF), an organization dedicated to enhancing the skills of National
+        University students. I began as an Executive of Creative Media, and soon earned a promotion to Head of Branding
+        and Communication, a role I held until February 2025. Meanwhile, I successfully completed my undergraduate
+        degree from ISTT in October 2023, and by November, I proudly held my certificate in hand. It was the crowning
+        moment of years of perseverance in both academics and extracurricular endeavors. After graduation, I explored
+        opportunities in IT, working as a Graphic Designer and in various IT-related roles. But in 2024, I made a
+        significant leap in my career by joining Channel i, Bangladesh’s first digital satellite television network, as
+        a Broadcast Engineer (Transmission). This role gave me the chance to merge technology, media, and my love for
+        innovation into a professional path that inspires me every day.</p>
 
-        <p>Outside academics and career, I have always been deeply passionate about football. The game has been a constant source of joy and energy for me, teaching me teamwork, strategy, and resilience. Whether watching international tournaments or playing casually, football has been a loyal companion throughout my journey. Looking back from a boy born in Mirpur, Dhaka, in 1998, shifting through eight schools, excelling in board examinations, thriving in university clubs, to becoming a Broadcast Engineer at Channel i, my journey has been full of movement, learning, and growth. Every transition, whether in school, college, or professional life, has been a stepping stone—building resilience, leadership, and a passion for growth. I carry forward all these experiences with gratitude and ambition, knowing that my story is still unfolding, with much more yet to be written.</p>
+      <p>Outside academics and career, I have always been deeply passionate about football. The game has been a constant
+        source of joy and energy for me, teaching me teamwork, strategy, and resilience. Whether watching international
+        tournaments or playing casually, football has been a loyal companion throughout my journey. Looking back from a
+        boy born in Mirpur, Dhaka, in 1998, shifting through eight schools, excelling in board examinations, thriving in
+        university clubs, to becoming a Broadcast Engineer at Channel i, my journey has been full of movement, learning,
+        and growth. Every transition, whether in school, college, or professional life, has been a stepping
+        stone—building resilience, leadership, and a passion for growth. I carry forward all these experiences with
+        gratitude and ambition, knowing that my story is still unfolding, with much more yet to be written.</p>
 
     </div>
 
@@ -648,7 +756,8 @@
           <div class="timeline-item-content">
             <span class="date">2006</span>
             <h3>New School, New Perspective</h3>
-            <p>Moved to 22 No. Chapta Government Primary School in Kashiani, Gopalganj (Class Two and Three). Learned to adapt.</p>
+            <p>Moved to 22 No. Chapta Government Primary School in Kashiani, Gopalganj (Class Two and Three). Learned to
+              adapt.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -676,42 +785,49 @@
           <div class="timeline-item-content">
             <span class="date">2010-2011</span>
             <h3>Transitional Schooling</h3>
-            <p>Began Class Six at Amin Model Town School and College (Jan-Jun 2010), then transferred to Sristy Central School (Jul 2010 - May 2011), finishing Class Six and Class Seven. Balanced studies with transitions.</p>
+            <p>Began Class Six at Amin Model Town School and College (Jan-Jun 2010), then transferred to Sristy Central
+              School (Jul 2010 - May 2011), finishing Class Six and Class Seven. Balanced studies with transitions.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-item-content">
             <span class="date">2012</span>
             <h3>Academic Flourishing & Scholarship</h3>
-            <p>Joined Naebunnessa Institution (Class Eight to Class Ten). Flourished academically, earning a General Scholarship from Dhaka Board for JSC.</p>
+            <p>Joined Naebunnessa Institution (Class Eight to Class Ten). Flourished academically, earning a General
+              Scholarship from Dhaka Board for JSC.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-item-content">
             <span class="date">2015-2017</span>
             <h3>College & Leadership Interest</h3>
-            <p>College years at Haji Lalmia City College, Gopalganj. Developed interest in leadership and communication.</p>
+            <p>College years at Haji Lalmia City College, Gopalganj. Developed interest in leadership and communication.
+            </p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-item-content">
             <span class="date">2018</span>
             <h3>University Life & Activism</h3>
-            <p>Started university at Institute of Science, Trade & Technology (ISTT). Active in IEEE ISTT Student Branch, ISTT Innovation Hub, Suvonil Literature and Cultural Club, Red Crescent, BYLC, and Youth Opportunities.</p>
+            <p>Started university at Institute of Science, Trade & Technology (ISTT). Active in IEEE ISTT Student
+              Branch, ISTT Innovation Hub, Suvonil Literature and Cultural Club, Red Crescent, BYLC, and Youth
+              Opportunities.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-item-content">
             <span class="date">2021-2023</span>
             <h3>Leadership at Farhanasbrainstation</h3>
-            <p>Joined Farhanasbrainstation as Content Writer, rose to Executive Director of Business Development (until Dec 2023).</p>
+            <p>Joined Farhanasbrainstation as Content Writer, rose to Executive Director of Business Development (until
+              Dec 2023).</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-item-content">
             <span class="date">2023-2025</span>
             <h3>NUSDF Leadership & Graduation</h3>
-            <p>Joined National University Skill Development Forum (NUSDF), promoted to Head of Branding and Communication (until Feb 2025). Completed undergraduate degree from ISTT in Oct 2023.</p>
+            <p>Joined National University Skill Development Forum (NUSDF), promoted to Head of Branding and
+              Communication (until Feb 2025). Completed undergraduate degree from ISTT in Oct 2023.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -739,33 +855,41 @@
       <h2 class="section-title">My Journey in Pictures</h2>
       <div class="gallery-grid">
         <div class="gallery-item gallery-item-large">
-          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/Childhood.webp" alt="Childhood Photo 1" loading="lazy">
+          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/Childhood.webp"
+            alt="Childhood Photo 1" loading="lazy" width="575" height="575">
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/with ferdouse bappy.webp" alt="School Days Photo" loading="lazy">
+          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/with ferdouse bappy.webp"
+            alt="School Days Photo" loading="lazy" width="280" height="280">
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/college-life.webp" alt="College Life Photo" loading="lazy">
+          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/college-life.webp"
+            alt="College Life Photo" loading="lazy" width="280" height="280">
         </div>
         <div class="gallery-item gallery-item-wide">
-          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/university-life.webp" alt="University Days Photo" loading="lazy">
+          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/university-life.webp"
+            alt="University Days Photo" loading="lazy" width="575" height="280">
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/channel-i-workplace.webp" alt="Professional Life Photo" loading="lazy">
+          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/channel-i-workplace.webp"
+            alt="Professional Life Photo" loading="lazy" width="280" height="280">
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/farhanasbrainstation.webp" alt="Current Work Photo" loading="lazy">
+          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/farhanasbrainstation.webp"
+            alt="Current Work Photo" loading="lazy" width="280" height="280">
         </div>
         <div class="gallery-item gallery-item-tall">
-          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/bandarban-tour.webp" alt="Hobbies Photo" loading="lazy">
+          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/bandarban-tour.webp"
+            alt="Hobbies Photo" loading="lazy" width="280" height="575">
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/graduation-photo.webp" alt="Graduation Photo" loading="lazy">
+          <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/graduation-photo.webp"
+            alt="Graduation Photo" loading="lazy" width="280" height="280">
         </div>
       </div>
     </div>
   </div>
-  
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
@@ -779,7 +903,7 @@
           <li><a href="https://www.abdullahfahim.xyz/contact">Contact</a></li>
         </ul>
       </div>
-        <div class="footer-nav">
+      <div class="footer-nav">
         <h3>Important Links</h3>
         <ul>
           <li><a href="https://www.abdullahfahim.xyz/resume">Download Resume</a></li>
@@ -800,58 +924,72 @@
     ↑
   </a>
 
-<script defer>
-  const backToTopButton = document.querySelector('.back-to-top');
+  <script>
+    /* Gemini Optimized JavaScript */
+    const backToTopButton = document.querySelector('.back-to-top');
+    const fadeInElements = document.querySelectorAll('.fade-in-bottom');
+    const timelineItems = document.querySelectorAll('.timeline-item');
 
-  const scrollFunction = () => {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      backToTopButton.classList.add('show');
-    } else {
-      backToTopButton.classList.remove('show');
-    }
-  };
-
-  const smoothScrollBackToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  window.addEventListener('scroll', scrollFunction);
-  backToTopButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    smoothScrollBackToTop();
-  });
-
-  // Intersection Observer for fade-in animation
-  const fadeInElements = document.querySelectorAll('.fade-in-bottom');
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('appear');
-        observer.unobserve(entry.target);
+    // Throttle function to limit the rate of function execution
+    const throttle = (func, limit) => {
+      let inThrottle;
+      return function () {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+          func.apply(context, args);
+          inThrottle = true;
+          setTimeout(() => inThrottle = false, limit);
+        }
       }
+    }
+
+    const scrollFunction = () => {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    };
+
+    const smoothScrollBackToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+
+    window.addEventListener('scroll', throttle(scrollFunction, 100));
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      smoothScrollBackToTop();
     });
-  }, observerOptions);
 
-  fadeInElements.forEach(element => {
-    observer.observe(element);
-  });
+    // Intersection Observer for fade-in animation
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
 
-  const timelineItems = document.querySelectorAll('.timeline-item');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
 
-  timelineItems.forEach(item => {
-    observer.observe(item);
-  });
-</script>
+    fadeInElements.forEach(element => {
+      observer.observe(element);
+    });
+
+    timelineItems.forEach(item => {
+      observer.observe(item);
+    });
+  </script>
 
 </body>
+
 </html>
