@@ -182,11 +182,11 @@
 
     @media (max-width: 480px) {
       #googleFormPopup {
-        width: 320px; /* Forced width for mobile */
-        height: 80vh;
+        width: calc(100% - 40px);
         right: 20px;
-        left: auto;
+        left: 20px;
         bottom: 80px;
+        height: 80vh; /* Adjust height for better fit on small screens */
       }
       #discussionBtn {
         bottom: 20px;
@@ -490,10 +490,10 @@
         </a>
       </div>
       <div style="margin-top: 20px; text-align: center;">
-        <img src="img/channeli-businesscard.webp" alt="Channel i Business Card" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <img src="https://raw.githubusercontent.com/abdullah-al-faahim/google-site/main/img/channeli-businesscard.webp" alt="Abdullah Al Fahim Business Card" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
       </div>
     </div>
-    
+
     <!-- RIGHT COLUMN: Contact Form -->
     <div class="card animate-on-scroll">
       <h3>Send a Message</h3>
@@ -523,6 +523,13 @@
   </div>
 </div>
 
+<!-- GOOGLE MAP SECTION -->
+<div class="container animate-on-scroll" style="padding-top: 20px;">
+  <div class="map-container" style="border-radius: 16px; overflow: hidden; border: 1px solid var(--brand); height: 480px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.433233291881!2d90.39767587532543!3d23.767582278658757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c76476921ad7%3A0x9cd506c25a4806f3!2sChannel%20i!5e0!3m2!1sen!2sbd!4v1756437605239!5m2!1sen!2sbd" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
 
 <!-- FOOTER -->
   <footer>
@@ -540,8 +547,8 @@
 	        <div class="footer-nav">
         <h3>Important Links</h3>
         <ul>
-          <li><a href="https://www.abdullahfahim.xyz/home">Download Resume</a></li>
-		  <li><a href="https://www.abdullahfahim.xyz/home">Get 1:1 Free Consultation</a></li>
+          <li><a href="https://www.abdullahfahim.xyz/resume">Download Resume</a></li>
+		  <li><a href="https://www.abdullahfahim.xyz/contact">Get 1:1 Free Consultation</a></li>
 		  <li><a href="https://cal.com/meet-fahim">Book an Appointment</a></li>
       </div>
       <div class="footer-contact">
@@ -562,7 +569,7 @@
   </button>
 
   <!-- Google Form Popup Container -->
-  <div id="googleFormPopup" style="position: fixed; bottom: 100px; right: 20px; width: 400px; height: 520px; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9998; overflow: hidden;">
+  <div id="googleFormPopup" style="position: fixed; bottom: 100px; right: 20px; width: 400px; height: 400px; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9998; overflow: hidden;">
     <button id="popupCloseBtn" style="position: absolute; top: 10px; left: 10px; background: var(--brand); border: none; font-size: 24px; cursor: pointer; color: #fff; z-index: 10000; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&times;</button>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScASIN8VO3TQtaIbwbf9zco_Q1ebrTEL3P_QfKH6PXiQjCWuw/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
@@ -649,16 +656,16 @@
       }
     });
 
-    // Close popup when clicking the new close button
-    popupCloseBtn.addEventListener('click', closePopup);
-
-    // Auto-popup after 5000ms if not opened by click
+    // Auto-popup after 2500ms if not opened by click
     setTimeout(() => {
-      // Check if it's a mobile view (e.g., screen width less than or equal to 480px)
+      // Check if it's a mobile view (e.g., screen width less than or equal to 420px)
       if (!popupOpened && window.innerWidth > 420) {
         openPopup();
       }
-    }, 5000);
+    }, 2500);
+
+    // Close popup when the new close button is clicked
+    popupCloseBtn.addEventListener('click', closePopup);
   </script>
 </body>
 </html>
